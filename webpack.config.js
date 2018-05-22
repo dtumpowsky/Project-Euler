@@ -34,13 +34,24 @@ module.exports = {
           'css-loader'
         ]
       },
+      // {
+      //   test: /\.js$/,
+      //   exclude: [
+      //     /node_modules/,
+      //     /spec/
+      //   ],
+      //   loader: "eslint-loader"
+      // },
       {
         test: /\.js$/,
         exclude: [
-        /node_modules/,
-        /spec/
-      ],
-        loader: "eslint-loader"
+          /node_modules/,
+          /spec/
+        ],
+        loader: "babel-loader",
+        options: {
+          presets: ['es2015']
+        }
       }
     ]
   }
